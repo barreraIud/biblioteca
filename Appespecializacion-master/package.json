@@ -1,0 +1,16 @@
+{
+  "name": "appinicio",
+  "version": "1.0.0",
+  "description": "Esta aplicación será para el curso de dev app web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Aguilar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "ngrok": "^4.2.2"
+  }
+}

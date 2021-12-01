@@ -1,0 +1,18 @@
+#Options All -Indexes
+
+#habilitar todos los módulos de reescritura de apache
+RewriteEngine on 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php?data=$1 [QSA, L]
+
+#definimos la regla de reescritura.
+#todo inicia a manipularse desde el index.php, por lo que si se envía un parámetro llamada usuarios
+#la regla index.php?dir=$1   es como si se enviara index.php?dir=usuarios , por lo que la regla
+#está autocompletando, ocultando esa url base y adjunta usuarios como parámetro get 
+#y siempre es index.php?dir= ya que es el archivo principal, ahí se valida y redirecciona rutas.
+RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?dir=$1
+#el $1 hace referencia a la primer expresión regular ([-a-zA-Z0-9/]+) , se puede añadir otra para $2
+
+
